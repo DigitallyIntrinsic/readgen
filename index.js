@@ -313,6 +313,13 @@ const creditQues = [
             }
         }
     },
+    {
+        type: 'confirm',
+        name: 'confirmAddCredit',
+        message: 'Would you like to add another credit?',
+        default: false
+    }
+]
     // TODO: Create a function to write README file
     function writeToFile(fileName, data) { }
 
