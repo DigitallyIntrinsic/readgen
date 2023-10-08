@@ -164,6 +164,15 @@ const questions = [
                 return false;
             }
         },
+        validate: licenseInput => {
+            if (licenseInput) {
+                return true;
+            } else {
+                console.log('Please provide license information for license(s) used.');
+                return false;
+            }
+        }
+    },
         // TODO: Create a function to write README file
         function writeToFile(fileName, data) {}
 
