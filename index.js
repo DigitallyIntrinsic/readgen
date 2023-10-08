@@ -274,6 +274,11 @@ const screenshotQues = [
             }
         }
     },
+    {
+        type: 'input',
+        name: 'screenshotDesc',
+        message: 'Please provide a description of your screenshot. (Optional)'
+    },
         // TODO: Create a function to write README file
         function writeToFile(fileName, data) {}
 
