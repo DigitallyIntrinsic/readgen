@@ -122,6 +122,15 @@ const questions = [
                 return false;
             }
         },
+        validate: linkInput => {
+            if (linkInput) {
+                return true;
+            } else {
+                console.log('Please provide a link to your deployed application.');
+                return false;
+            }
+        }
+    },
         // TODO: Create a function to write README file
         function writeToFile(fileName, data) {}
 
