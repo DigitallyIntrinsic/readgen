@@ -238,6 +238,16 @@ const questions = [
                 return false;
             }
         },
+        validate: questionsInput => {
+            if (questionsInput) {
+                return true;
+            } else {
+                console.log('Please provide a contact email address.');
+                return false;
+            }
+        }
+    }
+];
         // TODO: Create a function to write README file
         function writeToFile(fileName, data) {}
 
