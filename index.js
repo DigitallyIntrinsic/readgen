@@ -58,7 +58,16 @@ const questions = [
 {
     type: 'input',
     name: 'usage',
-    message: 'Please provide information for using your application. (Required)',
+    message: 'Please provide directions or guidelines for using your application. (Required)',
+    validate: usageInput => {
+        if (usageInput) {
+            return true;
+        } else {
+            console.log('Please provide directions or guidelines for using your application.');
+            return false;
+        }
+    }
+},
 ];
 
 // TODO: Create a function to write README file
