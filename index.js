@@ -320,6 +320,7 @@ const creditQues = [
         default: false
     }
 ]
+
 addScreenshots = readmeData => {
 
     if (!readmeData.screenshots) {
@@ -338,6 +339,27 @@ addScreenshots = readmeData => {
             } else {
                 return readmeData;
             };
+        });
+};
+
+addCredits = readmeInfo => {
+
+    if (!readmeInfo.credits) {
+        readmeInfo.credits = [];
+    };
+    console.log(`
+==============
+Add New Credit
+==============
+    `);
+    return inquirer.prompt(creditQues)
+        .then(creditData => {
+            readmeInfo.credits.push(creditData);
+            if (creditData.confirmAddCredit) {
+                return addCredits(readmeInfo);
+            } else {
+                return readmeInfo;
+            }
         });
 };
     // TODO: Create a function to write README file
