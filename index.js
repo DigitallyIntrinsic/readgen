@@ -227,8 +227,19 @@ const questions = [
             }
         }
     },
-    // TODO: Create a function to write README file
-    function writeToFile(fileName, data) { }
+    {
+        type: 'input',
+        name: 'questions',
+        message: 'Please provide an email address for others to reach you with questions.',
+        when: ({ contents }) => {
+            if (contents.indexOf('Questions') > -1) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+        // TODO: Create a function to write README file
+        function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
 function init() { }
