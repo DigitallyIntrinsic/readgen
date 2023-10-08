@@ -387,3 +387,16 @@ init()
             return userResponse;
         }
     })
+    .then(response => {
+        // calls function to add credits based on user selection
+        if (response.contents.indexOf('Credits') > -1) {
+            return addCredits(response);
+        } else {
+            return response;
+        }
+    })
+    .then(answers => generateMarkdown(answers))
+    .then(generatedReadme => writeToFile('README.md', generatedReadme))
+    .catch(err => {
+        console.log(err);
+    });
