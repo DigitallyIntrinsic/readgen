@@ -262,6 +262,18 @@ const screenshotQues = [
             }
         }
     },
+    {
+        type: 'input',
+        name: 'screenshotAlt',
+        message: 'Please provide secondary text for your screenshot. (Required)',
+        validate: screenshotAltInput => {
+            if (screenshotAltInput) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    },
         // TODO: Create a function to write README file
         function writeToFile(fileName, data) {}
 
