@@ -68,6 +68,10 @@ const questions = [
         }
     }
 },
+{
+    type: 'checkbox',
+    name: 'contents',
+    message: 'Are there any additional sections you would like to include in your README?',
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
