@@ -97,6 +97,20 @@ const questions = [
             name: 'Contributing',
             checked: false
         },
+        {
+            name: 'Tests',
+            checked: false
+        },
+        {
+            name: 'Questions',
+            checked: true
+        },
+        {
+            name: 'Credits',
+            checked: true
+        },
+    ]
+},
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
