@@ -218,6 +218,15 @@ const questions = [
                 return false;
             }
         },
+        validate: testsInput => {
+            if (testsInput) {
+                return true;
+            } else {
+                console.log('What required packages are needed to run tests for your application?');
+                return false;
+            }
+        }
+    },
     // TODO: Create a function to write README file
     function writeToFile(fileName, data) { }
 
