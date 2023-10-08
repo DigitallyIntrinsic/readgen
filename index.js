@@ -173,8 +173,33 @@ const questions = [
             }
         }
     },
-        // TODO: Create a function to write README file
-        function writeToFile(fileName, data) {}
+    {
+        type: 'checkbox',
+        name: 'built with',
+        message: 'Please select the technologies that your application was built with.',
+        choices: ['HTML', 'CSS', 'SASS', 'JavaScript', 'Node.js', 'Express.js'],
+        default: 0,
+        when: ({ contents }) => {
+            if (contents.indexOf('Built With') > -1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        name: 'contributing',
+        message: 'Please enter your contributing guidelines.',
+        when: ({ contents }) => {
+            if (contents.indexOf('Contributing') > -1) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+    // TODO: Create a function to write README file
+    function writeToFile(fileName, data) { }
 
 // TODO: Create a function to initialize app
 function init() { }
