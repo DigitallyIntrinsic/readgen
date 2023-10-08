@@ -248,6 +248,20 @@ const questions = [
         }
     }
 ];
+const screenshotQues = [
+    {
+        type: 'input',
+        name: 'screenshotLink',
+        message: 'Please provide working a link for your screenshot. (Required)',
+        validate: screenshotLinkInput => {
+            if (screenshotLinkInput) {
+                return true;
+            } else {
+                console.log('Please provide a working link for your screenshot.')
+                return false;
+            }
+        }
+    },
         // TODO: Create a function to write README file
         function writeToFile(fileName, data) {}
 
