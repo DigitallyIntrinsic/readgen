@@ -8,6 +8,14 @@ const renderLicenseBadge = license => {
       return '';
   }
 };
+const createDescription = (title, description, link) => {
+  if (link) {
+      return `${description}
+      View the deployed page at [${title}](${link}).`;
+  } else {
+      return `${description}`;
+  }
+};
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
