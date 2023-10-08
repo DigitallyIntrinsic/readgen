@@ -17,6 +17,19 @@ const questions = [
         }
     }
 },
+{
+    type: 'input',
+    name: 'github',
+    message: 'Please enter your GitHub username. (Required)',
+    validate: githubInput => {
+        if (githubInput) {
+            return true;
+        } else {
+            console.log('Please provide your GitHub username before continuing.');
+            return false;
+        }
+    }
+},
 ];
 
 // TODO: Create a function to write README file
