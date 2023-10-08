@@ -131,6 +131,17 @@ const questions = [
             }
         }
     },
+    {
+        type: 'input',
+        name: 'installation',
+        message: 'Please list any required packages for installation of your application.',
+        when: ({ contents }) => {
+            if (contents.indexOf('Installation') > -1) {
+                return true;
+            } else {
+                return false;
+            }
+        },
         // TODO: Create a function to write README file
         function writeToFile(fileName, data) {}
 
