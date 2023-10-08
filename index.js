@@ -331,7 +331,7 @@ addScreenshots = readmeData => {
     Add New Screenshot
     ==================
         `);
-        return inquirer.prompt(screenshotQues)
+    return inquirer.prompt(screenshotQues)
         .then(screenshotData => {
             readmeData.screenshots.push(screenshotData);
             if (screenshotData.confirmAddScreenshot) {
@@ -362,11 +362,20 @@ Add New Credit
             }
         });
 };
-    // TODO: Create a function to write README file
-    function writeToFile(fileName, data) { }
+// TODO: Create a function to write README file
+function writeToFile(fileName, data) {
+    fs.writeFile(`./dist/${fileName}`, data, err => {
+        if (err) {
+            throw err
+        };
+        console.log('Your README file has been created.')
+    });
+};
 
-    // TODO: Create a function to initialize app
-    function init() { }
+// TODO: Create a function to initialize app
+function init() {
+    return inquirer.prompt(questions);
+ }
 
-    // Function call to initialize app
-    init();
+// Function call to initialize app
+init();
