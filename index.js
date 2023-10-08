@@ -30,6 +30,9 @@ const questions = [
         }
     }
 },
+{
+    type: 'input',
+    name: 'repo',
 ];
 
 // TODO: Create a function to write README file
