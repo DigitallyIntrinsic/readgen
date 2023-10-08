@@ -142,6 +142,15 @@ const questions = [
                 return false;
             }
         },
+        validate: installInput => {
+            if (installInput) {
+                return true;
+            } else {
+                console.log('Please enter installation instructions for your required packages.');
+                return false;
+            }
+        }
+    },
         // TODO: Create a function to write README file
         function writeToFile(fileName, data) {}
 
