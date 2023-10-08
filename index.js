@@ -7,8 +7,16 @@ const questions = [
     {
         type: 'input',
         name: 'title',
-        message: "Please provide a projext title. (Required)",
+        message: "Please provide a project title. (Required)",
+        validate: nameInput => {
+            if (nameInput) {
+                return true;
+        } else {
+            console.log("Please provide a project title before continuing.");
+            return false;
+        }
     }
+},
 ];
 
 // TODO: Create a function to write README file
