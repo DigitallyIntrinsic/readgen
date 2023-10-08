@@ -85,6 +85,18 @@ const questions = [
             name: 'Screenshots',
             checked: true
         },
+        {
+            name: 'Built With',
+            checked: true
+        },
+        {
+            name: 'License',
+            checked: false
+        },
+        {
+            name: 'Contributing',
+            checked: false
+        },
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
