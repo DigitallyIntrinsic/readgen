@@ -320,6 +320,12 @@ const creditQues = [
         default: false
     }
 ]
+addScreenshots = readmeData => {
+
+    if (!readmeData.screenshots) {
+        readmeData.screenshots = [];
+    }
+    
     // TODO: Create a function to write README file
     function writeToFile(fileName, data) { }
 
