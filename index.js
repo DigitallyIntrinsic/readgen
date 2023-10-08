@@ -11,112 +11,122 @@ const questions = [
         validate: nameInput => {
             if (nameInput) {
                 return true;
-        } else {
-            console.log("Please provide a project title before continuing.");
-            return false;
+            } else {
+                console.log("Please provide a project title before continuing.");
+                return false;
+            }
         }
-    }
-},
-{
-    type: 'input',
-    name: 'github',
-    message: 'Please enter your GitHub username. (Required)',
-    validate: githubInput => {
-        if (githubInput) {
-            return true;
-        } else {
-            console.log('Please provide your GitHub username before continuing.');
-            return false;
+    },
+    {
+        type: 'input',
+        name: 'github',
+        message: 'Please enter your GitHub username. (Required)',
+        validate: githubInput => {
+            if (githubInput) {
+                return true;
+            } else {
+                console.log('Please provide your GitHub username before continuing.');
+                return false;
+            }
         }
-    }
-},
-{
-    type: 'input',
-    name: 'repo',
-    message: 'Please enter the name of your repo. (Required)',
-    validate: repoInput => {
-        if (repoInput) {
-            return true;
-        } else {
-            console.log('Please provide your repo name before continuing.')
+    },
+    {
+        type: 'input',
+        name: 'repo',
+        message: 'Please enter the name of your repo. (Required)',
+        validate: repoInput => {
+            if (repoInput) {
+                return true;
+            } else {
+                console.log('Please provide your repo name before continuing.')
+            }
         }
-    }
-},
-{
-    type: 'input',
-    name: 'description',
-    message: 'Please provide a description of your application. (Required)',
-    validate: descInput => {
-        if (descInput) {
-            return true;
-        } else {
-            console.log('Please provide a description of your application.');
-            return false;
+    },
+    {
+        type: 'input',
+        name: 'description',
+        message: 'Please provide a description of your application. (Required)',
+        validate: descInput => {
+            if (descInput) {
+                return true;
+            } else {
+                console.log('Please provide a description of your application.');
+                return false;
+            }
         }
-    }
-},
-{
-    type: 'input',
-    name: 'usage',
-    message: 'Please provide directions or guidelines for using your application. (Required)',
-    validate: usageInput => {
-        if (usageInput) {
-            return true;
-        } else {
-            console.log('Please provide directions or guidelines for using your application.');
-            return false;
+    },
+    {
+        type: 'input',
+        name: 'usage',
+        message: 'Please provide directions or guidelines for using your application. (Required)',
+        validate: usageInput => {
+            if (usageInput) {
+                return true;
+            } else {
+                console.log('Please provide directions or guidelines for using your application.');
+                return false;
+            }
         }
-    }
-},
-{
-    type: 'checkbox',
-    name: 'contents',
-    message: 'Are there any additional sections you would like to include in your README?',
-    choices: [
-        {
-            name: 'Deployed Application',
-            checked: false
+    },
+    {
+        type: 'checkbox',
+        name: 'contents',
+        message: 'Are there any additional sections you would like to include in your README?',
+        choices: [
+            {
+                name: 'Deployed Application',
+                checked: false
+            },
+            {
+                name: 'Installation',
+                checked: false
+            },
+            {
+                name: 'Screenshots',
+                checked: true
+            },
+            {
+                name: 'Built With',
+                checked: true
+            },
+            {
+                name: 'License',
+                checked: false
+            },
+            {
+                name: 'Contributing',
+                checked: false
+            },
+            {
+                name: 'Tests',
+                checked: false
+            },
+            {
+                name: 'Questions',
+                checked: true
+            },
+            {
+                name: 'Credits',
+                checked: true
+            },
+        ]
+    },
+    {
+        type: 'input',
+        name: 'link',
+        message: 'Please provide a link to your deployed application.',
+        when: ({ contents }) => {
+            if (contents.indexOf('Deployed Application') > -1) {
+                return true;
+            } else {
+                return false;
+            }
         },
-        {
-            name: 'Installation',
-            checked: false
-        },
-        {
-            name: 'Screenshots',
-            checked: true
-        },
-        {
-            name: 'Built With',
-            checked: true
-        },
-        {
-            name: 'License',
-            checked: false
-        },
-        {
-            name: 'Contributing',
-            checked: false
-        },
-        {
-            name: 'Tests',
-            checked: false
-        },
-        {
-            name: 'Questions',
-            checked: true
-        },
-        {
-            name: 'Credits',
-            checked: true
-        },
-    ]
-},
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+        // TODO: Create a function to write README file
+        function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() { }
 
 // Function call to initialize app
 init();
