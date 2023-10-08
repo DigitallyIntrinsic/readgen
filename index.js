@@ -286,6 +286,20 @@ const screenshotQues = [
         default: false
     }
 ];
+const creditQues = [
+    {
+        type: 'input',
+        name: 'creditName',
+        message: 'Please add the names of any contributers. (Required)',
+        validate: creditName => {
+            if (creditName) {
+                return true;
+            } else {
+                console.log('Please add the names of any contributers.');
+                return false;
+            }
+        }
+    },
         // TODO: Create a function to write README file
         function writeToFile(fileName, data) {}
 
