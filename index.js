@@ -42,6 +42,19 @@ const questions = [
         }
     }
 },
+{
+    type: 'input',
+    name: 'description',
+    message: 'Please provide a description of your application. (Required)',
+    validate: descInput => {
+        if (descInput) {
+            return true;
+        } else {
+            console.log('Please provide a description of your application.');
+            return false;
+        }
+    }
+}, 
 ];
 
 // TODO: Create a function to write README file
