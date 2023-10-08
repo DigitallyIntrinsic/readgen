@@ -54,7 +54,11 @@ const questions = [
             return false;
         }
     }
-}, 
+},
+{
+    type: 'input',
+    name: 'usage',
+    message: 'Please provide information for using your application. (Required)',
 ];
 
 // TODO: Create a function to write README file
