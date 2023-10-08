@@ -300,8 +300,21 @@ const creditQues = [
             }
         }
     },
-        // TODO: Create a function to write README file
-        function writeToFile(fileName, data) {}
+    {
+        type: 'input',
+        name: 'creditLink',
+        message: 'Please provide a link, or links, for any outside credit.  (Required)',
+        validate: creditLink => {
+            if (creditLink) {
+                return true;
+            } else {
+                console.log('Please provide a link, or links, for any outside credit.');
+                return false;
+            }
+        }
+    },
+    // TODO: Create a function to write README file
+    function writeToFile(fileName, data) { }
 
 // TODO: Create a function to initialize app
 function init() { }
