@@ -279,6 +279,13 @@ const screenshotQues = [
         name: 'screenshotDesc',
         message: 'Please provide a description of your screenshot. (Optional)'
     },
+    {
+        type: 'confirm',
+        name: 'confirmAddScreenshot',
+        message: 'Would you like to add another screenshot?',
+        default: false
+    }
+];
         // TODO: Create a function to write README file
         function writeToFile(fileName, data) {}
 
