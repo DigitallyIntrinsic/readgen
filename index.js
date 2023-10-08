@@ -325,12 +325,26 @@ addScreenshots = readmeData => {
     if (!readmeData.screenshots) {
         readmeData.screenshots = [];
     }
-    
+    console.log(`
+    ==================
+    Add New Screenshot
+    ==================
+        `);
+        return inquirer.prompt(screenshotQues)
+        .then(screenshotData => {
+            readmeData.screenshots.push(screenshotData);
+            if (screenshotData.confirmAddScreenshot) {
+                return addScreenshots(readmeData);
+            } else {
+                return readmeData;
+            };
+        });
+};
     // TODO: Create a function to write README file
     function writeToFile(fileName, data) { }
 
-// TODO: Create a function to initialize app
-function init() { }
+    // TODO: Create a function to initialize app
+    function init() { }
 
-// Function call to initialize app
-init();
+    // Function call to initialize app
+    init();
