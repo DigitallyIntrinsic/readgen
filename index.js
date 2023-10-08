@@ -207,6 +207,17 @@ const questions = [
             }
         }
     },
+    {
+        type: 'input',
+        name: 'tests',
+        message: 'Please enter any test information for your application.',
+        when: ({ contents }) => {
+            if (contents.indexOf('Tests') > -1) {
+                return true;
+            } else {
+                return false;
+            }
+        },
     // TODO: Create a function to write README file
     function writeToFile(fileName, data) { }
 
