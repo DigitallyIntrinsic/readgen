@@ -375,7 +375,15 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     return inquirer.prompt(questions);
- }
+}
 
 // Function call to initialize app
-init();
+init()
+    .then(userResponse => {
+        // calls function to add screenshots based on user selection
+        if (userResponse.contents.indexOf('Screenshots') > -1) {
+            return addScreenshots(userResponse);
+        } else {
+            return userResponse;
+        }
+    })
