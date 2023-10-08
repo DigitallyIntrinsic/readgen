@@ -198,6 +198,15 @@ const questions = [
                 return false;
             }
         },
+        validate: contributingInput => {
+            if (contributingInput) {
+                return true;
+            } else {
+                console.log('Please enter your contributing guidelines.');
+                return false;
+            }
+        }
+    },
     // TODO: Create a function to write README file
     function writeToFile(fileName, data) { }
 
