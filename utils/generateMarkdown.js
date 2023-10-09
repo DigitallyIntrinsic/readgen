@@ -42,6 +42,20 @@ const createInstallation = install => {
     return '';
   }
 };
+
+const createScreenshots = screenshotItem => {
+  let allScreenshots = '';
+  if (screenshotItem) {
+    screenshotItem.forEach(shot => {
+      allScreenshots += `![${shot.screenshotAlt}](${shot.screenshotLink})
+${shot.screenshotDesc}
+`;
+    });
+    return `${allScreenshots}`;
+  } else {
+    return '';
+  }
+};
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) { }
