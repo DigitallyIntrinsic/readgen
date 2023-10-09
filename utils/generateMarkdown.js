@@ -57,17 +57,17 @@ ${shot.screenshotDesc}
   }
 };
 
-const createBuiltWith = builtWith =>{
+const createBuiltWith = builtWith => {
   let allTechnologies = '';
 
   if (builtWith) {
-      builtWith.forEach(item => {
-          allTechnologies += `
+    builtWith.forEach(item => {
+      allTechnologies += `
 * ${item}`
-      });
-      return `${allTechnologies}`;
+    });
+    return `${allTechnologies}`;
   } else {
-      return '';
+    return '';
   };
 };
 
@@ -77,10 +77,22 @@ const createUsage = (usage, screenshots) => {
 // creates license section
 const createLicense = license => {
   if (license) {
-      return `This application is licensed under the ${license} license.`;
+    return `This application is licensed under the ${license} license.`;
   } else {
-      return '';
+    return '';
   }
+};
+
+const createTest = test => {
+  if (test) {
+    return `To run tests on the application, install
+\`\`\`
+${test}
+\`\`\`
+and run \`npm run test\` from the command line.`
+  } else {
+    return '';
+  };
 };
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
