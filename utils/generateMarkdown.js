@@ -97,22 +97,22 @@ and run \`npm run test\` from the command line.`
 
 const createQuestions = (email, github, repo) => {
   if (email) {
-      return `If you have any questions about the repo, please [open an issue](https://github.com/${github}/${repo}/issues) or contact me via email at ${email}. You can find more of my work on my GitHub, [${github}](https://github.com/${github}/).`
+    return `If you have any questions about the repo, please [open an issue](https://github.com/${github}/${repo}/issues) or contact me via email at ${email}. You can find more of my work on my GitHub, [${github}](https://github.com/${github}/).`
   } else {
-      return '';
+    return '';
   }
 };
 
 const createCredits = creditItem => {
   let allCredits = '';
   if (creditItem) {
-      creditItem.forEach((credit) => {
+    creditItem.forEach((credit) => {
       allCredits += `* [${credit.creditName}](${credit.creditLink})
 `;
-      });
-      return allCredits;
+    });
+    return allCredits;
   } else {
-      return '';
+    return '';
   }
 };
 
@@ -120,56 +120,69 @@ function generateMarkdown(data) {
   const { title, github, repo, license } = data;
   let readmeContents = '';
   const sectionArr = [
-      {
-          header: 'Installation',
-          content: createInstallation(data.installation)
-      },
-      {
-          header: 'Usage',
-          content: createUsage(data.usage)
-      },
-      {
-          header: 'Screenshots',
-          content: createScreenshots(data.screenshots)
-      },
-      {
-          header: 'Built With',
-          content: createBuiltWith(data['built with'])
-      },
-      {
-          header: 'License',
-          content: createLicense(license)
-      },
-      {
-          header: 'Contributing', 
-          content: data.contributing 
-      },
-      {
-          header: 'Tests',
-          content: createTest(data.tests)
-      },
-      {
-          header: 'Questions',
-          content: createQuestions(data.questions, github, repo)
-      },
-      {
-          header: 'Credits',
-          content: createCredits(data.credits)
-      },
+    {
+      header: 'Installation',
+      content: createInstallation(data.installation)
+    },
+    {
+      header: 'Usage',
+      content: createUsage(data.usage)
+    },
+    {
+      header: 'Screenshots',
+      content: createScreenshots(data.screenshots)
+    },
+    {
+      header: 'Built With',
+      content: createBuiltWith(data['built with'])
+    },
+    {
+      header: 'License',
+      content: createLicense(license)
+    },
+    {
+      header: 'Contributing',
+      content: data.contributing
+    },
+    {
+      header: 'Tests',
+      content: createTest(data.tests)
+    },
+    {
+      header: 'Questions',
+      content: createQuestions(data.questions, github, repo)
+    },
+    {
+      header: 'Credits',
+      content: createCredits(data.credits)
+    },
   ];
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) { }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) { }
-
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
+  sectionArr.forEach((sectionItem) => {
+    if (sectionItem.content && sectionItem.header === 'Screenshots') {
+      readmeContents += `### ${sectionItem.header}
+${sectionItem.content}
+`
+    } else if (sectionItem.content) {
+      readmeContents += `## ${sectionItem.header}
+${sectionItem.content}
 
 `;
-}
+    }
+  });
+  // TODO: Create a function that returns the license link
+  // If there is no license, return an empty string
+  function renderLicenseLink(license) { }
 
-module.exports = generateMarkdown;
+  // TODO: Create a function that returns the license section of README
+  // If there is no license, return an empty string
+  function renderLicenseSection(license) { }
+
+  // TODO: Create a function to generate markdown for README
+  function generateMarkdown(data) {
+    return `# ${data.title}
+
+`;
+  }
+
+  module.exports = generateMarkdown;
