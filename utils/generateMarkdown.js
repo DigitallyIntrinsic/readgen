@@ -11,6 +11,7 @@ const renderLicenseBadge = license => {
 const createDescription = (title, description, link) => {
   if (link) {
       return `${description}
+      
       View the deployed page at [${title}](${link}).`;
   } else {
       return `${description}`;
