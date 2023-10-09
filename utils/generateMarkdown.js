@@ -115,6 +115,48 @@ const createCredits = creditItem => {
       return '';
   }
 };
+
+function generateMarkdown(data) {
+  const { title, github, repo, license } = data;
+  let readmeContents = '';
+  const sectionArr = [
+      {
+          header: 'Installation',
+          content: createInstallation(data.installation)
+      },
+      {
+          header: 'Usage',
+          content: createUsage(data.usage)
+      },
+      {
+          header: 'Screenshots',
+          content: createScreenshots(data.screenshots)
+      },
+      {
+          header: 'Built With',
+          content: createBuiltWith(data['built with'])
+      },
+      {
+          header: 'License',
+          content: createLicense(license)
+      },
+      {
+          header: 'Contributing', 
+          content: data.contributing 
+      },
+      {
+          header: 'Tests',
+          content: createTest(data.tests)
+      },
+      {
+          header: 'Questions',
+          content: createQuestions(data.questions, github, repo)
+      },
+      {
+          header: 'Credits',
+          content: createCredits(data.credits)
+      },
+  ];
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) { }
