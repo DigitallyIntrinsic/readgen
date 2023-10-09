@@ -70,6 +70,18 @@ const createBuiltWith = builtWith =>{
       return '';
   };
 };
+
+const createUsage = (usage, screenshots) => {
+  return `${usage} ${createScreenshots(screenshots)}`
+};
+// creates license section
+const createLicense = license => {
+  if (license) {
+      return `This application is licensed under the ${license} license.`;
+  } else {
+      return '';
+  }
+};
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) { }
