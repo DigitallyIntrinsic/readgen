@@ -94,6 +94,27 @@ and run \`npm run test\` from the command line.`
     return '';
   };
 };
+
+const createQuestions = (email, github, repo) => {
+  if (email) {
+      return `If you have any questions about the repo, please [open an issue](https://github.com/${github}/${repo}/issues) or contact me via email at ${email}. You can find more of my work on my GitHub, [${github}](https://github.com/${github}/).`
+  } else {
+      return '';
+  }
+};
+
+const createCredits = creditItem => {
+  let allCredits = '';
+  if (creditItem) {
+      creditItem.forEach((credit) => {
+      allCredits += `* [${credit.creditName}](${credit.creditLink})
+`;
+      });
+      return allCredits;
+  } else {
+      return '';
+  }
+};
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) { }
