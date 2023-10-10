@@ -7,12 +7,12 @@ const questions = [
     {
         type: 'input',
         name: 'title',
-        message: "Please provide a project title. (Required)",
+        message: 'Please provide a project title.  (Required)',
         validate: nameInput => {
             if (nameInput) {
                 return true;
             } else {
-                console.log("Please provide a project title before continuing.");
+                console.log('Please provide a project title!');
                 return false;
             }
         }
@@ -25,7 +25,7 @@ const questions = [
             if (githubInput) {
                 return true;
             } else {
-                console.log('Please provide your GitHub username before continuing.');
+                console.log('Please enter your GitHub username!');
                 return false;
             }
         }
@@ -38,19 +38,19 @@ const questions = [
             if (repoInput) {
                 return true;
             } else {
-                console.log('Please provide your repo name before continuing.')
+                console.log('Please enter the name of your repo!')
             }
         }
     },
     {
         type: 'input',
         name: 'description',
-        message: 'Please provide a description of your application. (Required)',
+        message: 'Provide a description of your application. (Required)',
         validate: descInput => {
             if (descInput) {
                 return true;
             } else {
-                console.log('Please provide a description of your application.');
+                console.log('Please enter a description!');
                 return false;
             }
         }
@@ -58,12 +58,12 @@ const questions = [
     {
         type: 'input',
         name: 'usage',
-        message: 'Please provide directions or guidelines for using your application. (Required)',
+        message: 'Please provide information for using your application. (Required)',
         validate: usageInput => {
             if (usageInput) {
                 return true;
             } else {
-                console.log('Please provide directions or guidelines for using your application.');
+                console.log('Please provide information for using your application!');
                 return false;
             }
         }
@@ -71,7 +71,7 @@ const questions = [
     {
         type: 'checkbox',
         name: 'contents',
-        message: 'Are there any additional sections you would like to include in your README?',
+        message: 'Any additional sections you would like to include in your README?',
         choices: [
             {
                 name: 'Deployed Application',
@@ -126,7 +126,7 @@ const questions = [
             if (linkInput) {
                 return true;
             } else {
-                console.log('Please provide a link to your deployed application.');
+                console.log('Please enter a link!');
                 return false;
             }
         }
@@ -146,7 +146,7 @@ const questions = [
             if (installInput) {
                 return true;
             } else {
-                console.log('Please enter installation instructions for your required packages.');
+                console.log('Please enter installation instructions!');
                 return false;
             }
         }
@@ -168,7 +168,7 @@ const questions = [
             if (licenseInput) {
                 return true;
             } else {
-                console.log('Please provide license information for license(s) used.');
+                console.log('Please provide license information!');
                 return false;
             }
         }
@@ -190,7 +190,7 @@ const questions = [
     {
         type: 'input',
         name: 'contributing',
-        message: 'Please enter your contributing guidelines.',
+        message: 'Please enter your guidelines for contributing.',
         when: ({ contents }) => {
             if (contents.indexOf('Contributing') > -1) {
                 return true;
@@ -202,7 +202,7 @@ const questions = [
             if (contributingInput) {
                 return true;
             } else {
-                console.log('Please enter your contributing guidelines.');
+                console.log('Please enter guidelines for contributing!');
                 return false;
             }
         }
@@ -210,7 +210,7 @@ const questions = [
     {
         type: 'input',
         name: 'tests',
-        message: 'Please enter any test information for your application.',
+        message: 'Please enter test information for your application.',
         when: ({ contents }) => {
             if (contents.indexOf('Tests') > -1) {
                 return true;
@@ -222,7 +222,7 @@ const questions = [
             if (testsInput) {
                 return true;
             } else {
-                console.log('What required packages are needed to run tests for your application?');
+                console.log('What packages are required to run tests for your application?');
                 return false;
             }
         }
@@ -242,22 +242,23 @@ const questions = [
             if (questionsInput) {
                 return true;
             } else {
-                console.log('Please provide a contact email address.');
+                console.log('Please provide an email address!');
                 return false;
             }
         }
     }
 ];
+// array of prompts for adding screenshots
 const screenshotQues = [
     {
         type: 'input',
         name: 'screenshotLink',
-        message: 'Please provide working a link for your screenshot. (Required)',
+        message: 'Please provide a link for your screenshot. (Required)',
         validate: screenshotLinkInput => {
             if (screenshotLinkInput) {
                 return true;
             } else {
-                console.log('Please provide a working link for your screenshot.')
+                console.log('Please provide a link for your screenshot!')
                 return false;
             }
         }
@@ -265,7 +266,7 @@ const screenshotQues = [
     {
         type: 'input',
         name: 'screenshotAlt',
-        message: 'Please provide secondary text for your screenshot. (Required)',
+        message: 'Please provide alt text for your screenshot. (Required)',
         validate: screenshotAltInput => {
             if (screenshotAltInput) {
                 return true;
@@ -286,16 +287,17 @@ const screenshotQues = [
         default: false
     }
 ];
+// array of prompts for adding credits
 const creditQues = [
     {
         type: 'input',
         name: 'creditName',
-        message: 'Please add the names of any contributers. (Required)',
+        message: 'Please give your credit a name. (Required)',
         validate: creditName => {
             if (creditName) {
                 return true;
             } else {
-                console.log('Please add the names of any contributers.');
+                console.log('Please enter a name for the credit!');
                 return false;
             }
         }
@@ -303,12 +305,12 @@ const creditQues = [
     {
         type: 'input',
         name: 'creditLink',
-        message: 'Please provide a link, or links, for any outside credit.  (Required)',
+        message: 'Please provide a link for the credit.  (Required)',
         validate: creditLink => {
             if (creditLink) {
                 return true;
             } else {
-                console.log('Please provide a link, or links, for any outside credit.');
+                console.log('Please enter a name for the credit!');
                 return false;
             }
         }
@@ -320,20 +322,23 @@ const creditQues = [
         default: false
     }
 ]
-
+// recursive function for adding screenshots
 addScreenshots = readmeData => {
 
+    // initiates screenshot array
     if (!readmeData.screenshots) {
         readmeData.screenshots = [];
     }
     console.log(`
-    ==================
-    Add New Screenshot
-    ==================
-        `);
+==================
+Add New Screenshot
+==================
+    `);
     return inquirer.prompt(screenshotQues)
         .then(screenshotData => {
+            // adds the screenshot to the array
             readmeData.screenshots.push(screenshotData);
+            // will call addScreenshots again based on user input
             if (screenshotData.confirmAddScreenshot) {
                 return addScreenshots(readmeData);
             } else {
@@ -341,9 +346,10 @@ addScreenshots = readmeData => {
             };
         });
 };
-
+// recursive function for adding credits
 addCredits = readmeInfo => {
 
+    // initiates array for credits
     if (!readmeInfo.credits) {
         readmeInfo.credits = [];
     };
@@ -354,7 +360,9 @@ Add New Credit
     `);
     return inquirer.prompt(creditQues)
         .then(creditData => {
+            // adds credits to array
             readmeInfo.credits.push(creditData);
+            // will call addCredits again based on user input
             if (creditData.confirmAddCredit) {
                 return addCredits(readmeInfo);
             } else {
@@ -362,20 +370,21 @@ Add New Credit
             }
         });
 };
+
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(`./dist/${fileName}`, data, err => {
         if (err) {
             throw err
         };
-        console.log('Your README file has been created.')
+        console.log('README created!')
     });
 };
 
 // TODO: Create a function to initialize app
 function init() {
     return inquirer.prompt(questions);
-}
+};
 
 // Function call to initialize app
 init()
