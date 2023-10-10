@@ -25,7 +25,7 @@ The node.js package “Inquirer” is required, you can find it in the link abov
 To use this application, you must install the inquirer package, you can find it here: https://www.npmjs.com/package/inquirer/v/8.2.4 
   
 ### Screenshots
-![This is a screenshot of the beginning of the application.](./dist/images/readgen-screenshot.png)
+![This is a screenshot of the beginning of the application.](./README.md)
 
 
 ## Built With
