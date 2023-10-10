@@ -7,12 +7,12 @@ const questions = [
     {
         type: 'input',
         name: 'title',
-        message: 'Please provide a project title.  (Required)',
+        message: 'Please provide a project title. (Required)',
         validate: nameInput => {
             if (nameInput) {
                 return true;
             } else {
-                console.log('Please provide a project title!');
+                console.log('Please provide a project title.');
                 return false;
             }
         }
@@ -25,7 +25,7 @@ const questions = [
             if (githubInput) {
                 return true;
             } else {
-                console.log('Please enter your GitHub username!');
+                console.log('Please enter your GitHub username.');
                 return false;
             }
         }
@@ -38,19 +38,19 @@ const questions = [
             if (repoInput) {
                 return true;
             } else {
-                console.log('Please enter the name of your repo!')
+                console.log('Please enter the name of your repo.')
             }
         }
     },
     {
         type: 'input',
         name: 'description',
-        message: 'Provide a description of your application. (Required)',
+        message: 'Please provide a description of your application. (Required)',
         validate: descInput => {
             if (descInput) {
                 return true;
             } else {
-                console.log('Please enter a description!');
+                console.log('Please provide a description of your application.');
                 return false;
             }
         }
@@ -126,7 +126,7 @@ const questions = [
             if (linkInput) {
                 return true;
             } else {
-                console.log('Please enter a link!');
+                console.log('Please provide a link to your deployed application.');
                 return false;
             }
         }
@@ -146,7 +146,7 @@ const questions = [
             if (installInput) {
                 return true;
             } else {
-                console.log('Please enter installation instructions!');
+                console.log('Please list any required packages for installation of your application.');
                 return false;
             }
         }
@@ -168,7 +168,7 @@ const questions = [
             if (licenseInput) {
                 return true;
             } else {
-                console.log('Please provide license information!');
+                console.log('Please provide license information for any licenses used.');
                 return false;
             }
         }
@@ -190,7 +190,7 @@ const questions = [
     {
         type: 'input',
         name: 'contributing',
-        message: 'Please enter your guidelines for contributing.',
+        message: 'Please provide your guidelines for contributing to this application.',
         when: ({ contents }) => {
             if (contents.indexOf('Contributing') > -1) {
                 return true;
@@ -202,7 +202,7 @@ const questions = [
             if (contributingInput) {
                 return true;
             } else {
-                console.log('Please enter guidelines for contributing!');
+                console.log('Please provide your guidelines for contributing to this application.');
                 return false;
             }
         }
@@ -230,7 +230,7 @@ const questions = [
     {
         type: 'input',
         name: 'questions',
-        message: 'Please provide an email address for others to reach you with questions.',
+        message: 'Please provide an email address for others to contact you with questions.',
         when: ({ contents }) => {
             if (contents.indexOf('Questions') > -1) {
                 return true;
@@ -242,7 +242,7 @@ const questions = [
             if (questionsInput) {
                 return true;
             } else {
-                console.log('Please provide an email address!');
+                console.log('Please provide an email address for others to contact you with questions.');
                 return false;
             }
         }
@@ -258,7 +258,7 @@ const screenshotQues = [
             if (screenshotLinkInput) {
                 return true;
             } else {
-                console.log('Please provide a link for your screenshot!')
+                console.log('Please provide a link for your screenshot.')
                 return false;
             }
         }
@@ -266,7 +266,7 @@ const screenshotQues = [
     {
         type: 'input',
         name: 'screenshotAlt',
-        message: 'Please provide alt text for your screenshot. (Required)',
+        message: 'Please provide alternative text for your screenshot. (Required)',
         validate: screenshotAltInput => {
             if (screenshotAltInput) {
                 return true;
@@ -297,7 +297,7 @@ const creditQues = [
             if (creditName) {
                 return true;
             } else {
-                console.log('Please enter a name for the credit!');
+                console.log('Please enter any names that may need credit.');
                 return false;
             }
         }
@@ -310,7 +310,7 @@ const creditQues = [
             if (creditLink) {
                 return true;
             } else {
-                console.log('Please enter a name for the credit!');
+                console.log('Please provide a link for the credit.');
                 return false;
             }
         }
