@@ -373,7 +373,7 @@ Add New Credit
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(`./dist/${fileName}`, data, err => {
+    fs.writeFile(`./${fileName}`, data, err => {
         if (err) {
             throw err
         };
