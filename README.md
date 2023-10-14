@@ -9,6 +9,7 @@ View the deployed page at [ReadGen](https://github.com/DigitallyIntrinsic/readge
 * [Installation](#installation)
 * [Usage](#usage)
    * [Screenshots](#screenshots)
+* [Built With](#built-with)
 * [License](#license)
 * [Contributing](#contributing)
 * [Tests](#tests)
@@ -28,6 +29,10 @@ To use this application, you must install the inquirer package, you can find it 
 ![This is a screenshot of the beginning of the application starting in the terminal.](/images/readgen-screenshot.png)
 
 
+## Built With
+
+* Node.js
+  
 ## License
 This application is licensed under the MIT license.
   
@@ -37,7 +42,7 @@ There are no contributing guidelines at this time, please fork and use as needed
 ## Tests
 To run tests on the application, install
 ```
-You can test this by using npm test, and running this in the integrated terminal in your code editor by using the command "node index".
+The inquirer package
 ```
 and run `npm run test` from the command line.
   
