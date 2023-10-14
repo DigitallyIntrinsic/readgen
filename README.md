@@ -24,6 +24,10 @@ The node.js package “Inquirer” is required, you can find it in the link belo
   
 ## Usage
 To use this application, you must install the inquirer package, you can find it here: https://www.npmjs.com/package/inquirer/v/8.2.4  
+
+## Live Screen Recording of Application in Use
+
+https://drive.google.com/file/d/1XPQjX5hFcPfezx8L7KlZaKPAQ-3Rafu7/view
   
 ### Screenshots
 ![This is a screenshot of the beginning of the application starting in the terminal.](/images/readgen-screenshot.png)
